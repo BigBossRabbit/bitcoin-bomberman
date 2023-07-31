@@ -44,7 +44,7 @@ function createWithdrawLNURL(){
     const payload = JSON.stringify({
         "expiresIn": 300,
         "amount": gGameEngine.totalSats * 1000,
-        "description": "Bomberman withdraw",
+        "description": "EasySats - Bomberman withdraw",
         "internalId": "11af01d092444a317cb33faa6b8304b8",
         "callbackUrl": "https://your-website.com/callback"
     });
@@ -57,7 +57,7 @@ function createWithdrawLNURL(){
             
             const data = JSON.parse(Http.responseText);
         
-            currentChargeID = data.data.id;
+            currentWithdrawlID = data.data.id;
 
             makeWithdrawQRCode(data)
         }
@@ -67,7 +67,7 @@ function createWithdrawLNURL(){
 
 function checkWithdraw() {
     const Http = new XMLHttpRequest();
-    const url = 'https://api.zebedee.io/v0/withdrawal-requests/' + currentChargeID;
+    const url = 'https://api.zebedee.io/v0/withdrawal-requests/' + currentWithdrawlID;
 
     Http.open("GET", url);
 
@@ -92,8 +92,6 @@ function checkWithdraw() {
             }
         }
     }
-
-
 }
 
 document.getElementById('withdrawButton').onclick = withdraw;

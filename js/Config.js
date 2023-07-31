@@ -1,7 +1,7 @@
 Config = Class.extend({
-    API_KEY: "ADD ZEBEDEE API KEY HERE",
+    API_KEY: "Add your Zebedee API Key Here",
     FEE:10,
-    BITCOIN_VALUE:10,
+    BITCOIN_VALUE:2,
 });
 
-config = new Config();
+config = new Config();a
